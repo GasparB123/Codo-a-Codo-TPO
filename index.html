@@ -9,72 +9,81 @@
     $mensaje .= "Email: " . $email . "\r\n";
     $mensaje .= "Telefono: " . $telefono . "\r\n";
     $mensaje .= "Comentario: " . $comentario . "\r\n";
-    $remitente = "From: $nombre <$email>";
-    mail($destino, $asunto, $mensaje, $remitente);
-    echo "Mensaje enviado";
-?>
+    $remitente = "From: $nombre <$email>"; mail($destino, $asunto, $mensaje,
+$remitente); echo "Mensaje enviado"; ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Ecommerce One Pager">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="El grupo">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Ecommerce One Pager" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="El grupo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Ecommerce One Pager</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Venta de PC y partes</h1>
     <p>My first paragraph.</p>
-<div>
     <div class="carousel">
-        <div class="carousel-inner">
-            <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-            <div class="carousel-item">
-                <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without">
-            </div>
-            <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item">
-                <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript">
-            </div>
-            <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-            <div class="carousel-item">
-                <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel">
-            </div>
-            <label for="carousel-3" class="carousel-control prev control-1">‹</label>
-            <label for="carousel-2" class="carousel-control next control-1">›</label>
-            <label for="carousel-1" class="carousel-control prev control-2">‹</label>
-            <label for="carousel-3" class="carousel-control next control-2">›</label>
-            <label for="carousel-2" class="carousel-control prev control-3">‹</label>
-            <label for="carousel-1" class="carousel-control next control-3">›</label>
-            <ol class="carousel-indicators">
-                <li>
-                    <label for="carousel-1" class="carousel-bullet">•</label>
-                </li>
-                <li>
-                    <label for="carousel-2" class="carousel-bullet">•</label>
-                </li>
-                <li>
-                    <label for="carousel-3" class="carousel-bullet">•</label>
-                </li>
-            </ol>
+      <div class="img-slider">
+        <div class="slide active">
+          <img src="./img/carousel1.jpg" alt="" />
+          <div class="info">
+            <h2></h2>
+            <p></p>
+          </div>
         </div>
+        <div class="slide">
+          <img src="./img/carousel2.jpg" alt="" />
+          <div class="info">
+            <h2>LG</h2>
+            <p>LG 24TN510S- WZ - Monitor Smart TV de 60 cm (24")</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/carousel3.jpg" alt="" />
+          <div class="info">
+            <h2>MSI</h2>
+            <p>GEFORCE RTX 4070 TI 12GB VENTUS 3X OC</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/carousel4.jpg" alt="" />
+          <div class="info">
+            <h2>ASUS</h2>
+            <p>ROG Zephyrus Duo 15 (GX550)</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="./img/carousel5.jpg" alt="" />
+          <div class="info">
+            <h2>Intel</h2>
+            <p>Intel Core i9-10900F</p>
+          </div>
+        </div>
+        <div class="navigation">
+          <div class="btn active"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+          <div class="btn"></div>
+        </div>
+      </div>
     </div>
-</div>
 
-
-</body>
-<footer>
+    <script src="./js/app.js"></script>
+  </body>
+  <footer>
     <p>Formulario de Contacto</p>
     <form action="form.php" method="post">
-        <p>Nombre: <input type="text" name="nombre" size="40"></p>
-        <p>Email: <input type="text" name="email" size="40"></p>
-        <p>Telefono: <input type="text" name="telefono" size="40"></p>
-        <p>Comentario:</p>
-        <textarea name="comentario" rows="6" cols="50"></textarea>
-        <p><input type="submit" value="Enviar"></p>
+      <p>Nombre: <input type="text" name="nombre" size="40" /></p>
+      <p>Email: <input type="text" name="email" size="40" /></p>
+      <p>Telefono: <input type="text" name="telefono" size="40" /></p>
+      <p>Comentario:</p>
+      <textarea name="comentario" rows="6" cols="50"></textarea>
+      <p><input type="submit" value="Enviar" /></p>
     </form>
     <p>Copyright El Grupo 2023 - Todos los derechos reservados</p>
-</footer>
+  </footer>
 </html>
