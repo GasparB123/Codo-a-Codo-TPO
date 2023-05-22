@@ -1,105 +1,348 @@
-.carousel {
-    position: relative;
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-    margin-top: 26px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
-.carousel-inner {
-    position: relative;
-    overflow: hidden;
+.button2 {background-color: #057397;
+width: 150px;
+height: 40px;
+color: #fff;
+border-radius: 5px;
+border-style: none;
+font-size: 1em;
+margin-bottom: 40px;
+
+
+}
+
+nav {
+    background: #473fdb;
+    height: 80px;
     width: 100%;
 }
 
-.carousel-open:checked + .carousel-item {
-    position: static;
-    opacity: 100;
-}
-
-.carousel-item {
+.enlace {
     position: absolute;
-    opacity: 0;
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
+    padding: 20px 50px;
 }
 
-.carousel-item img {
-    display: block;
-    height: auto;
-    max-width: 100%;
+.logo {
+    height: 40px;
 }
 
-.carousel-control {
-    background: rgba(0, 0, 0, 0.28);
-    border-radius: 50%;
+nav ul {
+    float: right;
+    position: relative;
+    align-items: center;
+    z-index: 90;
+    margin-right: 20px;
+    
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    
+    
+}
+
+nav ul li a {
     color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+li a.active,
+li a:hover {
+    background: #00000043;
+    transition: .5s;
+
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
     cursor: pointer;
     display: none;
-    font-size: 40px;
-    height: 40px;
-    line-height: 35px;
     position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    cursor: pointer;
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    text-align: center;
-    width: 40px;
-    z-index: 10;
+    z-index: 99;
 }
 
-.carousel-control.prev {
-    left: 2%;
+#check {
+    display: none;
 }
 
-.carousel-control.next {
-    right: 2%;
+section {
+    background: url(fondo.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+    
 }
 
-.carousel-control:hover {
-    background: rgba(0, 0, 0, 0.8);
-    color: #aaaaaa;
+
+.carousel {
+    background: #1D212B;
 }
 
-#carousel-1:checked ~ .control-1,
-#carousel-2:checked ~ .control-2,
-#carousel-3:checked ~ .control-3 {
-    display: block;
+.img-slider {
+    position: inherit;
+    width: 800px;
+    height: 500px;
+    background: #1D212B;
 }
 
-.carousel-indicators {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.img-slider .slide {
+    z-index: 1;
     position: absolute;
-    bottom: 2%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
 }
 
-.carousel-indicators li {
-    display: inline-block;
-    margin: 0 5px;
+.img-slider .slide.active {
+    clip-path: circle(150% at 0 50%);
+    transition: 1.0s;
 }
 
-.carousel-bullet {
+.img-slider .slide img {
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.img-slider .slide .info {
+    position: absolute;
+    top: 100;
+    padding: 50px 30px;
+    ;
+    
+}
+
+.img-slider .slide .info h2 {
     color: #fff;
-    cursor: pointer;
-    display: block;
-    font-size: 35px;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-style: italic;
 }
 
-.carousel-bullet:hover {
-    color: #aaaaaa;
+.img-slider .slide .info p {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.192);
+    font-size: 2em;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
 }
 
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-    color: #428bca;
+.img-slider .navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
+
+
+/*Descomentar para visualizar los botones
+
+/* .img-slider .navigation .btn{
+  background: rgb(228, 0, 0);
+  width: 12px;
+  height: 12px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.img-slider .navigation .btn.active{
+  background: #6aff00;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+} */
+
+@media (max-width: 1024px) {
+    .img-slider {
+        width: 600px;
+        height: 375px;
+        position: inherit;
+        z-index: 0;
+    }
+
+    .img-slider .slide .info {
+        padding: 10px 25px;
+    }
+
+    .img-slider .slide .info h2 {
+        font-size: 35px;
+    }
+
+    .img-slider .slide .info p {
+        width: 70%;
+        font-size: 15px;
+    }
+
+    .img-slider .navigation {
+        bottom: 25px;
+    }
+
+    .img-slider .navigation .btn {
+        width: 10px;
+        height: 10px;
+        margin: 8px;
+    }
+    .enlace {
+        padding-left: 20px;
+        
+    }
+    nav ul li a {
+        font-size: 16px;
+        
+    }
+
+    .checkbtn {
+        display: block;
+    position: fixed;
+    margin-left: 20;
+    margin-top: 20;
+    
+    }
+
+    ul {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e507c;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        
+        
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+        display: block;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        
+    }
+
+    li a:hover,
+    li a.active {
+        background: none;
+        position: relative;
+        color: red;
+        
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .logo {
+        height: 40px;
+        display: none;
+    }
+    .button2 {background-color: #057397;
+        width: 90px;
+        height: 30px;
+        color: #fff;
+        border-radius: 5px;
+        border-style: none;
+        font-size: 1em;
+        margin-bottom: 40px;
+}
+
+
+@media (max-width: 768px) {
+
+    .logo {
+        height: 40px;
+        display: none;
+    }
+    
+    .img-slider {
+        width: 400px;
+        height: 250px;
+    }
+
+    .img-slider .slide .info {
+        padding: 10px 20px;
+    }
+
+    .img-slider .slide .info h2 {
+        font-size: 30px;
+    }
+
+    .img-slider .slide .info p {
+        width: 80%;
+        font-size: 13px;
+    }
+
+    .img-slider .navigation {
+        bottom: 15px;
+    }
+
+    .img-slider .navigation .btn {
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .img-slider {
+        width: 320px;
+        height: 200px;
+    }
+
+    .img-slider .slide .info {
+        padding: 5px 10px;
+    }
+
+    .img-slider .slide .info h2 {
+        font-size: 25px;
+    }
+
+    .img-slider .slide .info p {
+        width: 90%;
+        font-size: 11px;
+    }
+
+    .img-slider .navigation {
+        bottom: 10px;
+    }
+}
+.button2 {background-color: #057397;
+    width: 80px;
+    height: 20px;
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 1em;
+    margin-bottom: 30px;}
+}
+
 
 #title {
     width: 100%;
@@ -112,4 +355,4 @@
     font-family: 'Open Sans', sans-serif;
     z-index: 9999;
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
-}
+} 
