@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-<<<<<<< HEAD
 
 * {
     margin: 0;
@@ -95,42 +94,19 @@ section {
 
 
 .carousel {
-=======
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
-.carousel {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
->>>>>>> 4f666440e547e27e438c403c9fd25f84a68617e1
     background: #1D212B;
 }
 
 .img-slider {
-<<<<<<< HEAD
     position: inherit;
     width: 800px;
     height: 500px;
-=======
-    position: relative;
-    width: 800px;
-    height: 500px;
-    margin: 10px;
->>>>>>> 4f666440e547e27e438c403c9fd25f84a68617e1
     background: #1D212B;
 }
 
 .img-slider .slide {
     z-index: 1;
     position: absolute;
-<<<<<<< HEAD
     width: 100%;
     clip-path: circle(0% at 0 50%);
 }
@@ -366,8 +342,6 @@ section {
     font-size: 1em;
     margin-bottom: 30px;}
 }
-
-
 #title {
 =======
 >>>>>>> 4f666440e547e27e438c403c9fd25f84a68617e1
