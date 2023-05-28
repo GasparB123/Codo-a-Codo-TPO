@@ -1,16 +1,20 @@
-<?php 
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $telefono = $_POST['telefono'];
-    $comentario = $_POST['comentario'];
-    $destino = "boschgaspar@gmail.com";
-    $asunto = "Contacto desde el sitio web";
-    $mensaje = "Nombre: " . $nombre . "\r\n";
-    $mensaje .= "Email: " . $email . "\r\n";
-    $mensaje .= "Telefono: " . $telefono . "\r\n";
-    $mensaje .= "Comentario: " . $comentario . "\r\n";
-    $remitente = "From: $nombre <$email>"; mail($destino, $asunto, $mensaje,
-$remitente); echo "Mensaje enviado"; ?>
+<?php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $nombre = $_POST['nombre'];
+      $email = $_POST['email'];
+      $telefono = $_POST['telefono'];
+      $comentario = $_POST['comentario'];
+      $destino = "boschgaspar@gmail.com";
+      $asunto = "Contacto desde el sitio web";
+      $mensaje = "Nombre: " . $nombre . "\r\n";
+      $mensaje .= "Email: " . $email . "\r\n";
+      $mensaje .= "Telefono: " . $telefono . "\r\n";
+      $mensaje .= "Comentario: " . $comentario . "\r\n";
+      $remitente = "From: $nombre <$email>"; 
+      mail($destino, $asunto, $mensaje, $remitente); 
+      echo "Mensaje enviado"; 
+  }
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,9 +31,6 @@ $remitente); echo "Mensaje enviado"; ?>
     />
   </head>
   <body>
-    <h1>Venta de PC y partes</h1>
-    <p>My first paragraph.</p>
-
     <nav>
       <input type="checkbox" id="check" />
 
@@ -52,12 +53,7 @@ $remitente); echo "Mensaje enviado"; ?>
 
         <li><a href="#">Contacto</a></li>
       </ul>
-    </nav>
-
-
-
-
-    
+    </nav>    
     <div class="carousel">
       <div class="img-slider">
         <div class="slide active">
@@ -110,42 +106,42 @@ $remitente); echo "Mensaje enviado"; ?>
         </div>
       </div>
     </div>
-    
-     <h2>Nuestros recomendados</h2><br>
-
-<section class="products">
-    <div class="product">
+    <h2>Nuestros recomendados</h2><br>
+    <section class="products">
+      <div class="product">
         <img src="https://m.media-amazon.com/images/I/71O4Ta6iIdL._AC_SL1500_.jpg" alt="PC 1">
         <h3>Gaming</h3>
         <p>Pc portatile 15.6" Laptop - Intel N5095 Win11 Pro, 16G RAM 256G SSD, Pantalla FHD</p>
         <p>Precio: $999</p>
         <button>Comprar</button>
-    </div>
-    <div class="product">
+      </div>
+      <div class="product">
         <img src="https://m.media-amazon.com/images/I/51267Yiea-L._AC_SY450_.jpg" alt="Parte 1">
         <h3>Trabajo</h3>
         <p>Laptop 14 Pulgadas,Intel JasperLake N5100,Windows11, 256Gb</p>
         <p>Precio: $1115</p>
         <button>Comprar</button>
-    </div>
-    <div class="product">
+      </div>
+      <div class="product">
         <img src="https://www.profesionalreview.com/wp-content/uploads/2018/12/Samsung-lanza-el-portatil-h%C3%ADbrido-Notebook-9-Pen-con-l%C3%A1piz-%C3%B3ptico.jpg" alt="Parte 1">
         <h3>Estudio</h3>
         <p>Samsung lanza el portatil híbrido Notebook 9 Pen con lápiz óptico.</p>
         <p>Precio: $885</p>
         <button>Comprar</button>
-    </div>
-    
-    <div class="product">
+      </div>
+      <div class="product">
         <img src="https://m.media-amazon.com/images/I/81q3820-57L._AC_SY450_.jpg" alt="Parte 1">
         <h3>Profesional</h3>
         <p>Full HD 15,6", Amd 3020 hasta 2,6 GHz, Wi-Fi, 3 usb, webcam HD</p>
         <p>Precio: $1599</p>
         <button>Comprar</button>
-    </div>    
-    <!-- Agrega más productos aquí -->
-</section>
+      </div>    
+      <!-- Agrega más productos aquí -->
+    </section>
 
+    <script src="./js/app.js"></script>
+  </body>
+  <footer>
     <p>Formulario de Contacto</p>
     <form action="form.php" method="post">
       <p>Nombre: <input type="text" name="nombre" size="40" /></p>
@@ -156,8 +152,5 @@ $remitente); echo "Mensaje enviado"; ?>
       <p><input type="submit" value="Enviar" /></p>
     </form>
     <p>Copyright El Grupo 2023 - Todos los derechos reservados</p>
-
-    <script src="./js/app.js"></script>
-  </body>
-  <footer></footer>
+  </footer>
 </html>
