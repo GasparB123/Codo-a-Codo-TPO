@@ -1,5 +1,5 @@
-var slides = document.querySelectorAll('.slide');
-var btns = document.querySelectorAll('.btn');
+var slides = document.querySelectorAll(".slide");
+var btns = document.querySelectorAll(".btn");
 let currentSlide = 1;
 
 // Manual Slider
@@ -25,17 +25,17 @@ let currentSlide = 1;
 
 // Autoplay
 var repeat = function (activeClass) {
-  let active = document.getElementsByClassName('active');
+  let active = document.getElementsByClassName("active");
   let i = 1;
 
   var repeater = () => {
     setTimeout(function () {
       [...active].forEach((activeSlide) => {
-        activeSlide.classList.remove('active');
+        activeSlide.classList.remove("active");
       });
 
-      slides[i].classList.add('active');
-      btns[i].classList.add('active');
+      slides[i].classList.add("active");
+      btns[i].classList.add("active");
       i++;
 
       if (slides.length == i) {
@@ -46,7 +46,7 @@ var repeat = function (activeClass) {
       }
       repeater();
     }, 15000);
-  }
+  };
   repeater();
-}
+};
 repeat();
