@@ -139,19 +139,30 @@
       <!-- Agrega más productos aquí -->
     </section>
     <script src="./js/app.js"></script>
-  </body>
-  <div class="form-container">
-    <footer>
+
+    <div class="form-container">
       <p>Formulario de Contacto</p>
-      <form action="form.php" method="post">
-        <p>Nombre: <input type="text" name="nombre" size="40" /></p>
-        <p>Email: <input type="text" name="email" size="40" /></p>
-        <p>Telefono: <input type="text" name="telefono" size="40" /></p>
-        <p>Comentario:</p>
-        <textarea name="comentario" rows="6" cols="50"></textarea>
-        <p><input type="submit" value="Enviar" /></p>
+      <form
+        name="ContactForm"
+        action="send_email.php"
+        onsubmit="return validateForm()"
+      >
+        <fieldset>
+          <legend>Información Personal</legend>
+          <label for="name">Nombre:</label>
+          <input type="text" name="name" id="name" required />
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required />
+          <label for="phone">Teléfono:</label>
+          <input type="tel" name="phone" id="phone" required />
+          <label for="message">Comentarios:</label>
+          <textarea name="message" id="message" required></textarea>
+        </fieldset>
       </form>
-      <p>Copyright El Grupo 2023 - Todos los derechos reservados</p>
-    </footer>
-  </div>
+    </div>
+  </body>
+
+  <footer>
+    <p>Copyright El Grupo 2023 - Todos los derechos reservados</p>
+  </footer>
 </html>
