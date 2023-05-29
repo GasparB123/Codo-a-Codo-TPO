@@ -530,6 +530,22 @@ section {
   background-color: #45a049;
 }
 
+.form-container input[type="email"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container input[type="tel"],
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 /* Estilos para el texto del pie de página */
 footer p {
   text-align: center;
