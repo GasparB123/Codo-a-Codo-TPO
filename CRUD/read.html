@@ -29,24 +29,24 @@
             </div>
         </nav>
     </header>
-    <div class="container pt-5">
+    <div class="container">
         <div class="row">
+            <div class="col-12 pt-5">
+                <h2 class="text-center">Leer Produtcto</h2>
+            </div>
             <div class="col-12">
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover table-bordered">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                        </tbody>
-                    </table>
-                </div>
+                <form id="form-read">
+                    <div class="mb-3">
+                        <label for="id-read" class="form-label">ID</label>
+                        <input type="number" class="form-control" id="id-read" name="id-read" placeholder="ID del producto" required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Leer</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12">
+                <div id="result-read"></div>
             </div>
         </div>
     </div>
