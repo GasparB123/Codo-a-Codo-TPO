@@ -49,7 +49,7 @@ const { createApp } = Vue
             fetch(this.url, options)
                 .then(function () {
                     alert("Producto modificado")
-                    window.location.href = "./productos_crud.html";    
+                    window.location.href = "productos_crud.html";    
                 })
                 .catch(err => {
                     console.error(err);
