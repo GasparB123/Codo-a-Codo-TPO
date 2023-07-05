@@ -4,7 +4,7 @@ const { createApp } = Vue
       return {
         productos:[],
         
-        url:'http://pablodelapuente.pythonanywhere.com/productos',
+        url:'https://pablodelapuente.pythonanywhere.com/productos',
         error:false,
         cargando:true,
       
