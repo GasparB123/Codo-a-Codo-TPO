@@ -11,7 +11,7 @@ const { createApp } = Vue
         descripcion:0,
         precio:0,
         id_producto:"",
-        url:'https://pablodelapuente.pythonanywhere.com/productos/'+id,
+        url:'http://pablodelapuente.pythonanywhere.com/productos/'+id,
        }  
     },
     methods: {
