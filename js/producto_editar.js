@@ -8,10 +8,10 @@ const { createApp } = Vue
         id:0,
         nombre:"",
         imagen:"",
-        descripcion:0,
+        descripcion:"",
         precio:0,
         id_producto:"",
-        url:'http://pablodelapuente.pythonanywhere.com/productos/'+id,
+        url:'https://pablodelapuente.pythonanywhere.com/productos/'+id,
        }  
     },
     methods: {
@@ -24,8 +24,8 @@ const { createApp } = Vue
                     this.nombre = data.nombre;
                     this.imagen=data.imagen
                     this.descripcion=data.descripcion
-                    this.precio=data.precio 
-                    this.id_producto=data.id_producto                  
+                    this.precio=data.precio  
+                    this.id_producto=data.id_producto               
                 })
                 .catch(err => {
                     console.error(err);
@@ -38,7 +38,7 @@ const { createApp } = Vue
                 precio: this.precio,
                 descripcion: this.descripcion,
                 imagen: this.imagen,
-                id_producto: this.id_producto
+                id_producto:this.id_producto,
             }
             var options = {
                 body: JSON.stringify(producto),
@@ -49,7 +49,7 @@ const { createApp } = Vue
             fetch(this.url, options)
                 .then(function () {
                     alert("Producto modificado")
-                    window.location.href = "productos_crud.html";    
+                    window.location.href = "productos.html";    
                 })
                 .catch(err => {
                     console.error(err);

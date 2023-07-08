@@ -3,18 +3,18 @@ const { createApp } = Vue
     data() {
       return {
         productos:[],
-        
-        url:'http://pablodelapuente.pythonanywhere.com/productos',
+        //url:'http://localhost:5000/productos', 
+   // si el backend esta corriendo local  usar localhost 5000(si no lo subieron a pythonanywhere)
+        url:'https://pablodelapuente.pythonanywhere.com/productos',   // si ya lo subieron a pythonanywhere
         error:false,
         cargando:true,
-      
+        /*atributos para el guardar los valores del formulario */
         id:0,
         nombre:"", 
-        id_producto:"",
+        imagen:"",
         descripcion:"",
         precio:0,
-        imagen:""
-        
+        id_producto:"",
     }  
     },
     methods: {
@@ -30,16 +30,16 @@ const { createApp } = Vue
                     this.error=true              
                 })
         },
-        eliminar(producto) {
-            const url = this.url+'/' + producto;
+        eliminar(id) {
+            const url = this.url+'/' + id;
             var options = {
                 method: 'DELETE',
             }
             fetch(url, options)
-                .then(res => res.text()) 
+                .then(res => res.text()) // or res.json()
                 .then(res => {
-			 alert('Producto Eliminado')
-                    location.reload();
+			 alert('Registro Eliminado')
+                    location.reload(); // recarga el json luego de eliminado el registro
                 })
         },
         grabar(){
@@ -48,7 +48,7 @@ const { createApp } = Vue
                 precio: this.precio,
                 descripcion: this.descripcion,
                 imagen:this.imagen,
-                id_producto:this.id_producto
+                id_producto:this.id_producto,
             }
             var options = {
                 body:JSON.stringify(producto),
@@ -58,8 +58,8 @@ const { createApp } = Vue
             }
             fetch(this.url, options)
                 .then(function () {
-                    alert("Producto grabado")
-                    window.location.href = "productos_crud.html";  // recarga productos.html
+                    alert("Registro grabado")
+                    window.location.href = "./productos.html";  // recarga productos.html
                 })
                 .catch(err => {
                     console.error(err);
